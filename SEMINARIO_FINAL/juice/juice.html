@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juices</title>
+    <link rel="stylesheet" href="juice.css">
+</head>
+<body>
+<nav class="navbar">
+    <img src="image/icons/logo.png" alt="Logo" class="logo-img"> <!-- Added logo -->
+    <ul class="nav-links">
+        <li><a href="/SEMINARIO_FINAL/index.html?_ijt=l6epprrf63b0j62rvph74jc8de&_ij_reload=RELOAD_ON_SAVE#home">Voltar ao Início</a></li>
+    </ul>
+    <div class="nav-icons">
+        <button class="icon-btn"><img src="image/icons/home-draw.png" alt="Home"></button>
+        <button class="icon-btn" onclick="openCart()"><img src="image/icons/cart-icon.png" alt="Search"></button>
+        <button class="icon-btn" id="person-icon"><img src="image/icons/person-draw.png" alt="Login"></button>
+    </div>
+</nav>
+
+<div id="cart" class="cart">
+    <div class="cart-header">
+        <span>Carrinho</span>
+        <button class="close-cart" onclick="closeCart()">&times;</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div id="cartTotal" class="cart-total">
+        <span>Total: R$ 0,00</span>
+    </div>
+</div>
+
+<!-- Contêiner de Sucos -->
+<div class="juice-container">
+    <div class="juice-card" onclick="showDetails('suco1')">
+        <img src="image/juice1.png" alt="Suco 1">
+        <h3>Pré Treino</h3>
+        <p>R$ 15,00</p>
+    </div>
+    <div class="juice-card" onclick="showDetails('suco2')">
+        <img src="image/juice2.png" alt="Suco 2">
+        <h3>Imuno C</h3>
+        <p>R$ 15,00</p>
+    </div>
+    <div class="juice-card" onclick="showDetails('suco3')">
+        <img src="image/juice3.png" alt="Suco 3">
+        <h3>Metabólico</h3>
+        <p>R$ 15,00</p>
+    </div>
+    <div class="juice-card" onclick="showDetails('suco4')">
+        <img src="image/juice2.png" alt="Suco 4">
+        <h3>Super Diurético</h3>
+        <p>R$ 15,00</p>
+    </div>
+    <div class="juice-card" onclick="showDetails('suco5')">
+        <img src="image/juice3.png" alt="Suco 5">
+        <h3>Regulador</h3>
+        <p>R$ 15,00</p>
+    </div>
+    <div class="juice-card" onclick="showDetails('suco6')">
+        <img src="image/juice1.png" alt="Suco 6">
+        <h3>Poderoso</h3>
+        <p>R$ 15,00</p>
+    </div>
+    <div class="juice-card" onclick="showDetails('suco7')">
+        <img src="image/juice3.png" alt="Suco 7">
+        <h3>Verde Detox</h3>
+        <p>R$ 15,00</p>
+    </div>
+    <div class="juice-card" onclick="showDetails('suco8')">
+        <img src="image/combo.png" alt="Suco 8">
+        <h3>Combo Imunidade</h3>
+        <p>R$ 45,00</p>
+    </div>
+    <div class="juice-card" onclick="showDetails('suco9')">
+        <img src="image/combo.png" alt="Suco 9">
+        <h3>Combo Energético</h3>
+        <p>R$ 45,00</p>
+    </div>
+</div>
+
+<!-- Modal para mostrar os detalhes do suco -->
+<div id="juiceModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="Imagem do Suco">
+        <div class="juice-details">
+            <h2 id="modalName"></h2>
+            <p id="modalDescription"></p>
+            <p id="modalPrice"></p>
+            <button class="add-to-cart-btn" onclick="addToCart(currentJuice)">
+                <img src="image/icons/cart-icon.png" alt="Adicionar ao Carrinho"> Adicionar ao Carrinho
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="juice.js"></script>
+</body>
+</html>
