@@ -4,7 +4,7 @@ body {
     color: #333;
 }
 
-/* Navbar */
+
 .navbar {
     background-color: rgba(143, 191, 143, 0.8);
     padding: 10px 20px;
@@ -16,11 +16,11 @@ body {
     z-index: 1000;
     width: 100%;
     box-sizing: border-box;
-    transition: transform 0.3s ease; /* Adicionando animação para esconder a navbar */
+    transition: transform 0.3s ease;
 }
 
 .navbar.hidden {
-    transform: translateY(-100%); /* Esconde a navbar quando estiver com a classe 'hidden' */
+    transform: translateY(-100%);
 }
 
 .logo-img {
@@ -65,7 +65,7 @@ body {
     border-radius: 100%;
 }
 
-/* Contêiner Principal */
+
 .juice-container {
     display: flex;
     flex-wrap: wrap;
@@ -74,7 +74,6 @@ body {
     padding: 40px;
 }
 
-/* Cartões dos Sucos */
 .juice-card {
     flex: 1 1 calc(33.33% - 40px);
     max-width: 300px;
@@ -107,21 +106,18 @@ body {
     color: #666;
 }
 
-/* Hover effect */
 .juice-card:hover {
     transform: scale(1.05);
 }
 
-/* Botão fechar carrinho */
 .close-cart {
     font-size: 24px;
     cursor: pointer;
 
 }
 
-/* Modal */
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -162,7 +158,6 @@ body {
     color: #666;
 }
 
-/* Fechar botão */
 .close-btn {
     color: #aaa;
     font-size: 28px;
@@ -177,7 +172,7 @@ body {
     color: #555;
 }
 
-/* Carrinho */
+
 .cart {
     position: fixed;
     top: 0;
@@ -209,11 +204,10 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
     position: relative;
-    top: -20px;  /* Movendo o total para cima */
-    margin-top: 0;  /* Garantindo que a margem superior não sobreponha o ajuste */
+    top: -20px;
+    margin-top: 0; 
 }
 
-/* Botão Adicionar ao Carrinho */
 .add-to-cart-btn {
     display: flex;
     align-items: center;
@@ -222,7 +216,7 @@ body {
     color: white;
     font-size: 14px;
     padding: 8px 16px;
-    border-radius: 5px; /* Botão mais retangular */
+    border-radius: 5px;
     border: none;
     cursor: pointer;
     width: fit-content;
@@ -239,7 +233,6 @@ body {
     background-color: #6b9e6b;
 }
 
-/* Exibição do carrinho */
 .cart-item {
     display: flex;
     align-items: center;
@@ -252,12 +245,11 @@ body {
     margin-right: 10px;
 }
 
-/* Remover item do carrinho */
 .remove-item-btn {
     font-size: 18px;
     color: red;
     cursor: pointer;
-    margin-right: 100px;  /* Posiciona o botão à direita */
+    margin-right: 100px;
 }
 
 .remove-item-btn:hover {

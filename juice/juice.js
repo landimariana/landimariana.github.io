@@ -1,12 +1,10 @@
 let cart = [];
 let currentJuice = null;
 
-// Função para salvar os itens do carrinho no localStorage
 function saveCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Função para carregar os itens do carrinho do localStorage
 function loadCart() {
     const storedCart = localStorage.getItem('cart');
     if (storedCart) {
@@ -14,28 +12,26 @@ function loadCart() {
     }
 }
 
-// Adiciona o item ao carrinho
 function addToCart(suco) {
     cart.push(suco);
-    saveCart();  // Salva no localStorage
+    saveCart(); 
     updateCart();
 }
 
-// Remove o item do carrinho
+
 function removeFromCart(index) {
     cart.splice(index, 1);
-    saveCart();  // Salva no localStorage
+    saveCart(); 
     updateCart();
 }
 
-// Atualiza a visualização do carrinho
+
 function updateCart() {
     let cartItemsContainer = document.getElementById('cartItems');
     let cartTotalContainer = document.getElementById('cartTotal');
-    cartItemsContainer.innerHTML = '';  // Limpar a lista de itens do carrinho
+    cartItemsContainer.innerHTML = ''; 
     let total = 0;
 
-    // Mostrar os itens no carrinho
     cart.forEach((item, index) => {
         let itemElement = document.createElement('div');
         itemElement.classList.add('cart-item');
@@ -51,23 +47,20 @@ function updateCart() {
         total += parseFloat(item.price.replace('R$', '').replace(',', '.'));
     });
 
-    // Atualizar o total
     cartTotalContainer.innerHTML = `Total: R$ ${total.toFixed(2)}`;
 }
 
-// Abre o carrinho
+
 function openCart() {
     document.getElementById('cart').style.display = 'flex';
-    document.querySelector('.navbar').classList.add('hidden');  // Esconde a navbar ao abrir o carrinho
+    document.querySelector('.navbar').classList.add('hidden');
 }
 
-// Fecha o carrinho
 function closeCart() {
     document.getElementById('cart').style.display = 'none';
-    document.querySelector('.navbar').classList.remove('hidden');  // Mostra a navbar novamente
+    document.querySelector('.navbar').classList.remove('hidden');
 }
 
-// Exibe os detalhes do suco no modal
 function showDetails(suco) {
     var modal = document.getElementById("juiceModal");
     var modalImage = document.getElementById("modalImage");
@@ -75,7 +68,6 @@ function showDetails(suco) {
     var modalDescription = document.getElementById("modalDescription");
     var modalPrice = document.getElementById("modalPrice");
 
-    // Adicionando informações do suco com base no suco clicado
     let juice = {};
     if (suco === 'suco1') {
         juice = {name: 'Pré Treino', price: 'R$ 15,00', image: 'image/juice1.png', description: 'Beterraba, Melancia, Morango e Gengibre'};
@@ -87,25 +79,21 @@ function showDetails(suco) {
 
     currentJuice = juice;
 
-    // Exibe a imagem, nome, descrição e preço no modal
     modalImage.src = juice.image;
     modalName.innerText = juice.name;
     modalDescription.innerText = juice.description;
     modalPrice.innerText = juice.price;
 
-    // Exibe o modal
     modal.style.display = "block";
-    document.querySelector('.navbar').classList.add('hidden');  // Esconde a navbar ao abrir o modal
+    document.querySelector('.navbar').classList.add('hidden');
 }
 
-// Fecha o modal
 function closeModal() {
     document.getElementById("juiceModal").style.display = "none";
-    document.querySelector('.navbar').classList.remove('hidden');  // Mostra a navbar novamente
+    document.querySelector('.navbar').classList.remove('hidden');
 }
 
-// Inicializa o carrinho ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
-    loadCart();  // Carrega os itens do carrinho do localStorage
-    updateCart(); // Atualiza a interface do carrinho
+    loadCart();
+    updateCart();
 });

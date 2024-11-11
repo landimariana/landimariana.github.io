@@ -1,4 +1,4 @@
-/* Resetando alguns estilos padrão */
+
 * {
     margin: 0;
     padding: 0;
@@ -173,7 +173,7 @@ main {
     color: #555;
 }
 
-/* Footer */
+
 footer {
     text-align: center;
     background-color: #333;
